@@ -1,41 +1,12 @@
 import React from 'react';
-import { 
-  Building2, Users, GraduationCap, ArrowRight, CheckCircle2, 
-  Laptop, Smartphone, PieChart, ShieldCheck 
+import {
+  Building2, Users, GraduationCap, ArrowRight, CheckCircle2,
+  Laptop, Smartphone, PieChart, ShieldCheck, Zap, BookOpen, Clock, PenTool, TrendingUp
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import LandingNavbar from '../../components/public/LandingNavbar';
 import LandingFooter from '../../components/public/LandingFooter';
 import ScrollReveal from '../../components/public/ScrollReveal';
-
-const SOLUTIONS = [
-  {
-    id: "centers",
-    title: "Dành cho Trung tâm & Chuỗi",
-    subtitle: "Tự động hóa 80% quy trình vận hành",
-    desc: "LuTech giúp ban giám đốc có cái nhìn toàn cảnh về tài chính, nhân sự và chất lượng đào tạo trên toàn hệ thống các cơ sở.",
-    icon: <Building2 size={32} className="text-blue-600" />,
-    color: "bg-blue-50 border-blue-100",
-    features: ["Quản lý thu/chi & công nợ tự động", "Phân quyền đa cơ sở (Multi-branch)", "Báo cáo tăng trưởng Real-time", "Quản lý chiến dịch CRM & Tuyển sinh"]
-  },
-  {
-    id: "teachers",
-    title: "Dành cho Giáo viên",
-    subtitle: "Giải phóng khỏi công việc giấy tờ",
-    desc: "Trợ lý AI giúp giáo viên chấm điểm Speaking/Writing IELTS ngay lập tức, tiết kiệm hàng chục giờ đồng hồ mỗi tuần để tập trung vào chuyên môn.",
-    icon: <Users size={32} className="text-emerald-600" />,
-    color: "bg-emerald-50 border-emerald-100",
-    features: ["Chấm thi tự động bằng AI (Auto-grading)", "Ngân hàng đề thi & Học liệu thông minh", "Quản lý điểm danh, bài tập về nhà", "Tương tác trực tiếp với học viên"]
-  },
-  {
-    id: "students",
-    title: "Dành cho Học viên & Phụ huynh",
-    subtitle: "Trải nghiệm học tập cá nhân hóa",
-    desc: "Học viên nắm rõ lộ trình, phụ huynh an tâm với các báo cáo cập nhật liên tục qua ứng dụng di động độc quyền.",
-    icon: <GraduationCap size={32} className="text-purple-600" />,
-    color: "bg-purple-50 border-purple-100",
-    features: ["App di động tiện lợi (iOS & Android)", "Xem lịch học & Thông báo đẩy", "Làm bài test Online mọi lúc mọi nơi", "Biểu đồ đánh giá năng lực chi tiết"]
-  }
-];
 
 const SolutionsPage = () => {
   return (
@@ -43,115 +14,168 @@ const SolutionsPage = () => {
       <LandingNavbar />
 
       <main className="pt-32 pb-24">
-        {/* 1. Hero Section */}
-        <section className="px-6 text-center max-w-5xl mx-auto mb-24 relative">
-          {/* Background Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
-          
+        {/* 1. Hero Section 3D */}
+        <section className="px-6 text-center max-w-6xl mx-auto mb-32 relative">
+          {/* Animated 3D Background Shapes */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <motion.div 
+              animate={{ y: [0, -40, 0], rotate: [0, 20, 0], scale: [1, 1.1, 1] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-10 left-[10%] w-48 h-48 bg-primary/20 rounded-3xl blur-2xl transform rotate-12"
+            />
+            <motion.div 
+              animate={{ y: [0, 50, 0], rotate: [0, -20, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute bottom-10 right-[10%] w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
+            />
+          </div>
+
           <ScrollReveal>
-            <span className="inline-block py-1.5 px-4 mb-6 text-sm font-bold text-primary bg-white border border-primary/20 rounded-full shadow-sm">
-              Giải quyết mọi bài toán quản lý
+            <span className="inline-block py-2 px-6 mb-10 mt-8 text-sm font-bold text-primary bg-white border border-primary/20 rounded-full shadow-sm relative z-20">
+              Giải pháp Chuyên biệt & Đột phá
             </span>
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">
-              Một nền tảng. <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Đa góc nhìn.</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-10 leading-[1.3] tracking-tight text-gray-900 relative z-20">
+              Thiết kế dành riêng cho <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
+                Thành công của bạn
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Dù bạn là Giám đốc cần số liệu, Giáo viên cần công cụ, hay Phụ huynh cần sự an tâm. LuTech đều có các phân hệ được thiết kế "đo ni đóng giày" cho riêng bạn.
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
+              Bỏ lại phía sau những quy trình thủ công phức tạp. LuTech mang đến trải nghiệm học tập và giảng dạy liền mạch, thông minh và được cá nhân hoá tuyệt đối.
             </p>
           </ScrollReveal>
         </section>
 
-        {/* 2. Solutions Details (Z-Pattern Layout) */}
-        <section className="px-6 max-w-7xl mx-auto space-y-32 mb-32">
-          {SOLUTIONS.map((solution, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <div key={solution.id} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center`}>
-                
-                {/* Text Content */}
-                <div className="w-full lg:w-1/2">
-                  <ScrollReveal delay={0.1}>
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 ${solution.color} shadow-sm border`}>
-                      {solution.icon}
-                    </div>
-                    <h2 className="text-4xl font-bold mb-4">{solution.title}</h2>
-                    <p className="text-xl font-medium text-gray-500 mb-6">{solution.subtitle}</p>
-                    <p className="text-gray-600 text-lg mb-8 leading-relaxed">{solution.desc}</p>
-                    
-                    <ul className="space-y-4 mb-10">
-                      {solution.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-3 text-gray-700 font-medium">
-                          <CheckCircle2 size={20} className="text-primary flex-shrink-0"/>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <button className="text-primary font-bold text-lg flex items-center gap-2 hover:gap-4 transition-all">
-                      Tìm hiểu thêm chi tiết <ArrowRight size={20} />
-                    </button>
-                  </ScrollReveal>
-                </div>
-
-                {/* UI Mockup (Fake UI) */}
-                <div className="w-full lg:w-1/2">
-                  <ScrollReveal delay={0.3}>
-                    <div className="bg-white p-2 rounded-[2.5rem] shadow-2xl border border-gray-100 relative group">
-                      {/* Trình duyệt giả */}
-                      <div className="bg-gray-50 rounded-[2rem] border border-gray-100 overflow-hidden h-[400px] flex flex-col relative">
-                        <div className="h-12 bg-white border-b border-gray-100 flex items-center px-6 gap-2">
-                          <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                          <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                          <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                          <div className="mx-auto w-1/2 h-6 bg-gray-50 rounded-md"></div>
-                        </div>
-                        {/* Cấu trúc giả lập UI tùy theo đối tượng */}
-                        <div className="p-8 flex-1 flex flex-col gap-4">
-                          <div className="w-1/3 h-8 bg-gray-200 rounded-lg mb-4"></div>
-                          <div className="flex gap-4">
-                            <div className="w-1/2 h-32 bg-primary/10 rounded-2xl border border-primary/20"></div>
-                            <div className="w-1/2 h-32 bg-blue-50 rounded-2xl border border-blue-100"></div>
-                          </div>
-                          <div className="w-full flex-1 bg-gray-100 rounded-2xl mt-2"></div>
-                        </div>
-                        
-                        {/* Overlay kính mờ khi hover */}
-                        <div className="absolute inset-0 bg-white/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          <span className="bg-gray-900 text-white px-6 py-3 rounded-full font-bold shadow-xl">Xem bản Demo</span>
-                        </div>
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                </div>
-                
+        {/* 2. Solutions for Students (Bento Grid) */}
+        <section className="px-6 max-w-7xl mx-auto mb-32">
+          <ScrollReveal>
+            <div className="flex items-center gap-4 mb-12">
+              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
+                <GraduationCap size={32} />
               </div>
-            );
-          })}
+              <div>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">Cho Học sinh</h2>
+                <p className="text-xl text-gray-500 font-medium">Học ít hơn, hiểu sâu hơn, điểm cao hơn.</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Bento Box 1 */}
+            <ScrollReveal delay={0.1}>
+              <motion.div whileHover={{ scale: 1.02 }} className="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm h-full flex flex-col justify-between group">
+                <div>
+                  <Zap size={40} className="text-yellow-500 mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-3xl font-bold mb-4">Chấm điểm AI 0.5s</h3>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-6">Nhận kết quả Reading & Listening ngay khi nộp bài. AI chỉ ra chính xác câu sai và giải thích cặn kẽ từng lỗi ngữ pháp.</p>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex gap-2 text-gray-700 font-medium"><CheckCircle2 className="text-primary" /> Chính xác 99%</li>
+                  <li className="flex gap-2 text-gray-700 font-medium"><CheckCircle2 className="text-primary" /> Có giải thích tiếng Việt</li>
+                </ul>
+              </motion.div>
+            </ScrollReveal>
+
+            {/* Bento Box 2 */}
+            <ScrollReveal delay={0.2}>
+              <motion.div whileHover={{ scale: 1.02 }} className="bg-gradient-to-br from-primary to-emerald-700 text-white p-10 rounded-[2rem] shadow-xl h-full flex flex-col justify-between group">
+                <div>
+                  <BookOpen size={40} className="text-white/80 mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-3xl font-bold mb-4">Kho đề vô tận</h3>
+                  <p className="text-lg text-white/90 leading-relaxed mb-6">Luyện tập thả ga với hàng ngàn đề thi chuẩn quốc tế được cập nhật hàng tuần. Mô phỏng 100% giao diện thi thật trên máy tính.</p>
+                </div>
+                <button className="bg-white text-primary w-full py-4 rounded-xl font-bold text-lg mt-4 group-hover:shadow-lg transition-all">
+                  Thi thử ngay
+                </button>
+              </motion.div>
+            </ScrollReveal>
+
+            {/* Bento Box 3 */}
+            <ScrollReveal delay={0.3}>
+              <motion.div whileHover={{ scale: 1.02 }} className="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm h-full flex flex-col justify-between group">
+                <div>
+                  <PieChart size={40} className="text-blue-500 mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-3xl font-bold mb-4">Lộ trình cá nhân hoá</h3>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-6">Hệ thống phân tích điểm yếu và tự động đề xuất bài tập bổ trợ tập trung đúng vào kỹ năng bạn còn kém.</p>
+                </div>
+                <div className="w-full h-24 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center p-4">
+                  <div className="w-full flex gap-2">
+                    <div className="h-4 bg-primary/20 rounded w-1/3"></div>
+                    <div className="h-4 bg-primary rounded w-2/3"></div>
+                  </div>
+                </div>
+              </motion.div>
+            </ScrollReveal>
+          </div>
         </section>
 
-        {/* 3. Lợi ích giá trị */}
-        <section className="bg-white py-24 border-y border-gray-100">
+        {/* 3. Solutions for Teachers (Bento Grid) */}
+        <section className="px-6 max-w-7xl mx-auto mb-32">
+          <ScrollReveal>
+            <div className="flex items-center gap-4 mb-12 flex-row-reverse text-right">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600">
+                <Users size={32} />
+              </div>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">Cho Giáo viên</h2>
+                <p className="text-xl text-gray-500 font-medium">Giảm 80% việc vặt, tập trung 100% chuyên môn.</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Feature 1 */}
+            <ScrollReveal delay={0.1}>
+              <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col md:flex-row gap-8 items-center group hover:shadow-xl transition-shadow">
+                <div className="w-24 h-24 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-110 transition-transform">
+                  <PenTool size={40} />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold mb-4">Trợ lý Chấm thi AI</h3>
+                  <p className="text-xl text-gray-600 leading-relaxed">Không còn cảnh thức đêm chấm bài. AI giúp đánh giá sơ bộ các bài Writing/Speaking và gợi ý cấu trúc nhận xét chuẩn xác, giúp bạn hoàn thành việc chấm thi nhanh gấp 3 lần.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Feature 2 */}
+            <ScrollReveal delay={0.2}>
+              <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col md:flex-row gap-8 items-center group hover:shadow-xl transition-shadow">
+                <div className="w-24 h-24 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0 group-hover:scale-110 transition-transform">
+                  <Laptop size={40} />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold mb-4">Quản lý Lớp 360°</h3>
+                  <p className="text-xl text-gray-600 leading-relaxed">Giao bài tập cho cả lớp chỉ với 1 click. Hệ thống tự động theo dõi tiến độ nộp bài, điểm danh và tổng hợp bảng điểm trực quan trên một màn hình duy nhất.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* 4. Workflow Journey */}
+        <section className="bg-white py-32 border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <ScrollReveal>
-              <h2 className="text-4xl font-bold mb-16">Quy trình vận hành trơn tru (Seamless Workflow)</h2>
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Trải nghiệm Dễ dàng & Xuyên suốt</h2>
+              <p className="text-2xl text-gray-500 mb-20 max-w-3xl mx-auto font-medium">Bắt đầu quá trình giảng dạy và học tập chưa bao giờ đơn giản đến thế.</p>
             </ScrollReveal>
+
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { icon: <Laptop/>, t: "1. Đăng ký & Placement Test", d: "Tự động phân loại đầu vào" },
-                { icon: <Building2/>, t: "2. Xếp lớp & Thu học phí", d: "Tạo hóa đơn e-invoice tự động" },
-                { icon: <PieChart/>, t: "3. Đào tạo & Báo cáo", d: "AI chấm thi, cập nhật điểm số" },
-                { icon: <ShieldCheck/>, t: "4. Cấp chứng chỉ", d: "Hoàn thành và lưu trữ hồ sơ" }
+                { icon: <Laptop />, t: "1. Truy cập", d: "Đăng nhập nhanh chóng trên mọi thiết bị." },
+                { icon: <BookOpen />, t: "2. Chọn bài", d: "Giáo viên giao bài, học sinh nhận thông báo." },
+                { icon: <Zap />, t: "3. Làm bài & Chấm AI", d: "Nộp bài và nhận điểm số phân tích tức thời." },
+                { icon: <TrendingUp />, t: "4. Cải thiện", d: "Ôn tập theo lộ trình cá nhân hoá." }
               ].map((step, i) => (
                 <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="relative group">
-                    {/* Đường gạch nối giữa các bước (ẩn ở bản mobile) */}
-                    {i < 3 && <div className="hidden md:block absolute top-8 left-1/2 w-full h-[2px] bg-gray-100 -z-10 group-hover:bg-primary/30 transition-colors"></div>}
-                    
-                    <div className="w-16 h-16 bg-white border-2 border-gray-100 rounded-full flex items-center justify-center text-primary shadow-sm mx-auto mb-6 group-hover:border-primary transition-colors">
-                      {step.icon}
+                  <div className="relative group text-center">
+                    {i < 3 && <div className="hidden md:block absolute top-10 left-[60%] w-full h-1 bg-gray-100 -z-10 group-hover:bg-primary/30 transition-colors rounded-full"></div>}
+
+                    <div className="w-20 h-20 bg-gray-50 border-2 border-gray-100 rounded-2xl flex items-center justify-center text-primary shadow-sm mx-auto mb-8 group-hover:border-primary group-hover:-translate-y-2 transition-all duration-300 transform">
+                      {React.cloneElement(step.icon, { size: 32 })}
                     </div>
-                    <h4 className="text-lg font-bold mb-2">{step.t}</h4>
-                    <p className="text-gray-500 text-sm">{step.d}</p>
+                    <h4 className="text-2xl font-bold mb-3">{step.t}</h4>
+                    <p className="text-gray-500 text-lg font-medium px-4">{step.d}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -159,24 +183,34 @@ const SolutionsPage = () => {
           </div>
         </section>
 
-        {/* 4. Final CTA */}
-        <section className="px-6 max-w-5xl mx-auto mt-24">
+        {/* 5. Final CTA */}
+        <section className="px-6 max-w-5xl mx-auto mt-32">
           <ScrollReveal>
-            <div className="bg-slate-900 text-white rounded-[3rem] p-16 text-center relative overflow-hidden">
-              {/* Trang trí */}
-              <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
-              <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-10">Bạn đã sẵn sàng để bứt phá?</h2>
-              <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto relative z-10">Liên hệ ngay hôm nay để nhận kịch bản chuyển đổi số được cá nhân hóa hoàn toàn miễn phí cho trung tâm của bạn.</p>
-              
-              <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primaryDark transition-colors">
-                  Dùng thử 14 ngày miễn phí
-                </button>
-                <button className="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-colors">
-                  Lên lịch Demo với Chuyên gia
-                </button>
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-[3rem] p-16 md:p-24 text-center relative overflow-hidden shadow-2xl">
+              {/* Trang trí 3D */}
+              <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-[100px] opacity-40"></div>
+              <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-600 rounded-full mix-blend-screen filter blur-[100px] opacity-30"></div>
+
+              <h2 className="text-4xl md:text-6xl font-extrabold mb-8 relative z-10 leading-tight">
+                Sẵn sàng bứt phá <br /> kết quả học tập?
+              </h2>
+              <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto relative z-10 font-medium leading-relaxed">
+                Tham gia cùng hàng ngàn giáo viên và học sinh đã và đang trải nghiệm phương pháp giáo dục hiện đại nhất.
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
+                <motion.button
+                  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                  className="bg-primary text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-lg hover:shadow-primary/50 transition-all"
+                >
+                  Đăng ký miễn phí
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                  className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-white/20 transition-all flex items-center justify-center gap-3"
+                >
+                  Tìm hiểu thêm <ArrowRight size={24} />
+                </motion.button>
               </div>
             </div>
           </ScrollReveal>

@@ -21,7 +21,7 @@ export default {
         danger: '#EF4444',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Khuyên dùng font Inter để hệ thống trông hiện đại
+        sans: ['Inter', 'sans-serif'], // Phông chữ chuẩn hóa cho tiếng Việt
       },
     },
   },

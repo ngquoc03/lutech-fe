@@ -1,12 +1,17 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, Calendar, Users, PenTool, 
-  BookOpen, FileCheck, UserPlus, Settings, LogOut, GraduationCap 
+  BookOpen, FileCheck, UserPlus, Settings, LogOut, GraduationCap, X
 } from 'lucide-react';
 
-const TeacherSidebar = () => {
+const TeacherSidebar = ({ isOpen, setIsOpen }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('lutech_role');
+    navigate('/login');
+  };
 
   // Nhóm các chức năng để giao diện gọn gàng và chuyên nghiệp hơn
   const MENU_GROUPS = [
@@ -32,23 +37,38 @@ const TeacherSidebar = () => {
       ]
     },
     {
-      group: "Quản trị (Admin)",
+      group: "Cấp tài khoản",
       items: [
-        { path: '/teacher/accounts', icon: <UserPlus size={20}/>, label: 'Cấp tài khoản HV/PH' },
+        { path: '/teacher/users', icon: <UserPlus size={20}/>, label: 'Quản lý HV/PH' },
       ]
     }
   ];
 
   return (
-    <aside className="w-[280px] bg-white border-r border-gray-100 flex flex-col fixed h-full z-20 hidden lg:flex shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
+    <aside className={`
+      w-[280px] bg-white border-r border-gray-100 flex flex-col fixed h-full z-40 
+      transition-transform duration-300 ease-in-out
+      ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      shadow-[4px_0_24px_rgba(0,0,0,0.02)]
+    `}>
       {/* Logo */}
-      <div className="h-20 flex items-center px-8 border-b border-gray-100">
-        <Link to="/teacher/dashboard" className="text-2xl font-bold text-primary flex items-center gap-2">
+      <div className="h-24 flex items-center justify-between px-8 border-b border-gray-100">
+        <Link 
+          to="/teacher/dashboard" 
+          onClick={() => setIsOpen?.(false)}
+          className="text-2xl font-bold text-primary flex items-center gap-2"
+        >
           <GraduationCap size={32} /> LuTech 
           <span className="text-[10px] font-black uppercase tracking-wider bg-blue-50 text-blue-600 px-2 py-1 rounded-md ml-1">
             Teacher
           </span>
         </Link>
+        <button 
+          onClick={() => setIsOpen?.(false)} 
+          className="lg:hidden p-2 text-gray-400 hover:bg-gray-100 rounded-lg transition-colors"
+        >
+          <X size={20} />
+        </button>
       </div>
 
       {/* Menu Links */}
@@ -65,8 +85,9 @@ const TeacherSidebar = () => {
                   <Link 
                     key={item.path}
                     to={item.path}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200 group relative ${
-                      isActive 
+                    onClick={() => setIsOpen?.(false)}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-bold text-sm
+                      ${isActive 
                         ? 'bg-primary/10 text-primary' 
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }`}
@@ -96,7 +117,10 @@ const TeacherSidebar = () => {
 
       {/* Footer / Logout */}
       <div className="p-4 border-t border-gray-100 bg-gray-50/50">
-        <button className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-gray-600 hover:bg-red-50 hover:text-red-600 transition-colors">
+        <button 
+          onClick={handleLogout}
+          className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-gray-600 hover:bg-red-50 hover:text-red-600 transition-colors"
+        >
           <LogOut size={20}/> Đăng xuất
         </button>
       </div>

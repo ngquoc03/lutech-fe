@@ -33,24 +33,24 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-gray-900 font-sans selection:bg-primary/20 overflow-hidden relative">
       <LandingNavbar />
-      
+
       <main className="w-full">
         {/* Hero không cần bọc hiệu ứng để hiện ngay lập tức */}
         <Hero />
-        
+
         <ScrollReveal><Trust /></ScrollReveal>
-        
+
         {/* Đổi màu nền xen kẽ bg-white và bg-[#FAFAFA] để trang không bị nhàm chán */}
-        <div className="bg-white"><ScrollReveal><Features /></ScrollReveal></div>
-        
+        <ScrollReveal><Features /></ScrollReveal>
+
         <ScrollReveal><Integrations /></ScrollReveal>
-        
-        <div className="bg-white"><ScrollReveal><Analytics /></ScrollReveal></div>
-        
+
+        <ScrollReveal><Analytics /></ScrollReveal>
+
         <ScrollReveal><TechnicalSecurity /></ScrollReveal>
-        
-        <div className="bg-white"><ScrollReveal><FAQ /></ScrollReveal></div>
-        
+
+        <ScrollReveal><FAQ /></ScrollReveal>
+
         <ScrollReveal><CTA /></ScrollReveal>
       </main>
 
@@ -59,9 +59,8 @@ const LandingPage = () => {
       {/* Nút Back to top với hiệu ứng nổi */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 p-4 bg-primary text-white rounded-full shadow-2xl hover:bg-primaryDark transition-all duration-300 z-50 focus:outline-none focus:ring-4 focus:ring-primary/50 ${
-          showTopBtn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-        }`}
+        className={`fixed bottom-8 right-8 p-4 bg-primary text-white rounded-full shadow-2xl hover:bg-primaryDark transition-all duration-300 z-50 focus:outline-none focus:ring-4 focus:ring-primary/50 ${showTopBtn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+          }`}
         aria-label="Cuộn lên đầu trang"
       >
         <ArrowUp size={24} />
