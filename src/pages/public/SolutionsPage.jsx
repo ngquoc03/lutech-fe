@@ -41,7 +41,7 @@ const SolutionsPage = () => {
               </span>
             </h1>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
-              Bỏ lại phía sau những quy trình thủ công phức tạp. LuTech mang đến trải nghiệm học tập và giảng dạy liền mạch, thông minh và được cá nhân hoá tuyệt đối.
+              Bỏ lại phía sau những quy trình thủ công phức tạp. EduTech mang đến trải nghiệm học tập và giảng dạy liền mạch, thông minh và được cá nhân hoá tuyệt đối.
             </p>
           </ScrollReveal>
         </section>

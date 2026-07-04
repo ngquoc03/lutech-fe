@@ -41,7 +41,7 @@ const ContactPage = () => {
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-medium">
-                  Dù bạn cần tư vấn giải pháp EdTech, hỗ trợ kỹ thuật hay báo giá doanh nghiệp, đội ngũ LuTech luôn sẵn sàng đồng hành cùng bạn.
+                  Dù bạn cần tư vấn giải pháp EdTech, hỗ trợ kỹ thuật hay báo giá doanh nghiệp, đội ngũ EduTech luôn sẵn sàng đồng hành cùng bạn.
                 </p>
               </header>
 
@@ -50,7 +50,7 @@ const ContactPage = () => {
                   {
                     icon: <MapPin size={28} />,
                     title: "Trụ sở chính",
-                    desc: "Tòa nhà LuTech, Quận 1, TP. Hồ Chí Minh",
+                    desc: "Tòa nhà EduTech, Quận 1, TP. Hồ Chí Minh",
                     color: "text-blue-600",
                     bg: "bg-blue-50"
                   },
@@ -64,7 +64,7 @@ const ContactPage = () => {
                   {
                     icon: <Mail size={28} />,
                     title: "Email liên hệ",
-                    desc: "hello@lutech.vn",
+                    desc: "hello@edutech.vn",
                     color: "text-purple-600",
                     bg: "bg-purple-50"
                   }

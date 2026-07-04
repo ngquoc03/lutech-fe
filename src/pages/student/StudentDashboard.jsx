@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-  BookOpen, Calendar, Clock, Trophy, 
-  ChevronRight, PlayCircle, CheckCircle2, AlertCircle 
+import {
+  BookOpen, Calendar, Clock, Trophy,
+  ChevronRight, PlayCircle, CheckCircle2, AlertCircle
 } from 'lucide-react';
 
 const StudentDashboard = () => {
@@ -12,7 +12,7 @@ const StudentDashboard = () => {
         {/* Abstract Background Shapes */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
         <div className="absolute bottom-0 right-32 w-48 h-48 bg-teal-300/20 rounded-full blur-2xl translate-y-1/3"></div>
-        
+
         <div className="relative z-10 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-black mb-4">Sẵn sàng chinh phục mục tiêu mới, An ơi! 🎯</h2>
           <p className="text-emerald-50 text-lg font-medium leading-relaxed mb-8 opacity-90">
@@ -27,7 +27,7 @@ const StudentDashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Cột trái: Stats & Tiến độ */}
         <div className="lg:col-span-2 space-y-8">
-          
+
           {/* Quick Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div className="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm flex flex-col items-center justify-center text-center">
@@ -66,13 +66,13 @@ const StudentDashboard = () => {
               <h3 className="text-xl font-extrabold text-gray-900">Bài giảng tiếp theo</h3>
               <button className="text-sm font-bold text-emerald-600 hover:text-emerald-700">Xem tất cả</button>
             </div>
-            
+
             <div className="space-y-4">
               <div className="group flex items-center gap-4 p-4 rounded-2xl border border-gray-100 hover:border-emerald-200 hover:bg-emerald-50 transition-all cursor-pointer">
                 <div className="w-16 h-16 rounded-xl overflow-hidden relative flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&q=80" alt="Toán học" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+                  <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&q=80" alt="Toán học" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <PlayCircle className="text-white" size={24}/>
+                    <PlayCircle className="text-white" size={24} />
                   </div>
                 </div>
                 <div className="flex-1">
@@ -89,9 +89,9 @@ const StudentDashboard = () => {
 
               <div className="group flex items-center gap-4 p-4 rounded-2xl border border-gray-100 hover:border-emerald-200 hover:bg-emerald-50 transition-all cursor-pointer">
                 <div className="w-16 h-16 rounded-xl overflow-hidden relative flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1546410531-bea4edad646a?w=500&q=80" alt="Vật lý" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+                  <img src="https://images.unsplash.com/photo-1546410531-bea4edad646a?w=500&q=80" alt="Vật lý" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <PlayCircle className="text-white" size={24}/>
+                    <PlayCircle className="text-white" size={24} />
                   </div>
                 </div>
                 <div className="flex-1">
@@ -107,19 +107,19 @@ const StudentDashboard = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
 
         {/* Cột phải: Tasks & Lịch */}
         <div className="space-y-8">
-          
+
           {/* Cần làm ngay (To-Do) */}
           <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-full -z-0"></div>
             <h3 className="text-xl font-extrabold text-gray-900 mb-6 relative z-10 flex items-center gap-2">
-              <AlertCircle className="text-amber-500" size={24}/> Việc cần làm
+              <AlertCircle className="text-amber-500" size={24} /> Việc cần làm
             </h3>
-            
+
             <div className="space-y-4 relative z-10">
               <div className="p-4 bg-white border border-gray-100 shadow-sm rounded-2xl hover:border-amber-200 hover:shadow-md transition-all cursor-pointer">
                 <div className="flex justify-between items-start mb-2">
@@ -144,9 +144,9 @@ const StudentDashboard = () => {
           {/* Lịch học sắp tới */}
           <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm">
             <h3 className="text-xl font-extrabold text-gray-900 mb-6 flex items-center gap-2">
-              <Calendar className="text-primary" size={24}/> Lịch học tuần này
+              <Calendar className="text-primary" size={24} /> Lịch học tuần này
             </h3>
-            
+
             <div className="space-y-5">
               <div className="flex gap-4">
                 <div className="flex flex-col items-center justify-center w-14 h-14 bg-gray-50 rounded-2xl flex-shrink-0 border border-gray-100">

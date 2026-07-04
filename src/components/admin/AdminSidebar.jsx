@@ -10,7 +10,7 @@ const AdminSidebar = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('lutech_role');
+    localStorage.removeItem('edutech_role');
     navigate('/login');
   };
 
@@ -39,7 +39,7 @@ const AdminSidebar = ({ isOpen, setIsOpen }) => {
           onClick={() => setIsOpen?.(false)}
           className="text-2xl font-bold text-white flex items-center gap-2"
         >
-          <Building2 size={32} className="text-amber-500"/> LuTech 
+          <Building2 size={32} className="text-primary"/> EduTech 
           <span className="text-[10px] font-black uppercase tracking-wider bg-rose-500/20 text-rose-500 px-2 py-1 rounded-md ml-1">
             Admin
           </span>
@@ -69,11 +69,11 @@ const AdminSidebar = ({ isOpen, setIsOpen }) => {
                     onClick={() => setIsOpen?.(false)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-bold text-sm
                       ${isActive 
-                        ? 'bg-amber-500/10 text-amber-500' 
+                        ? 'bg-primary/10 text-primary' 
                         : 'text-zinc-400 hover:bg-zinc-800/50 hover:text-zinc-200'
                     }`}
                   >
-                    <div className={`${isActive ? 'text-amber-500' : 'text-zinc-500'}`}>
+                    <div className={`${isActive ? 'text-primary' : 'text-zinc-500'}`}>
                       {item.icon}
                     </div>
                     {item.label}

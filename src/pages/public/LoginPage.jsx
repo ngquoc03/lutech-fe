@@ -6,7 +6,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = (role, path) => {
-    localStorage.setItem('lutech_role', role);
+    localStorage.setItem('edutech_role', role);
     navigate(path);
   };
 
@@ -54,7 +54,7 @@ const LoginPage = () => {
           <div>
             <div className="flex items-center gap-2 mb-12">
               <GraduationCap size={40} className="text-amber-500" />
-              <span className="text-3xl font-black tracking-tight">LuTech</span>
+              <span className="text-3xl font-black tracking-tight">EduTech</span>
             </div>
             <h1 className="text-4xl font-extrabold leading-tight mb-4">
               Nền tảng EdTech hiện đại nhất.
@@ -65,7 +65,7 @@ const LoginPage = () => {
           </div>
           
           <div className="mt-12 text-xs font-bold text-zinc-600 uppercase tracking-wider">
-            © 2026 LuTech Platform
+            © 2026 EduTech Platform
           </div>
         </div>
 

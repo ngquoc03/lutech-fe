@@ -36,7 +36,7 @@ const TeacherNavbar = ({ onMenuClick }) => {
         
         <div className="hidden md:flex flex-col justify-center">
           <div className="flex items-center gap-2 text-sm font-bold text-gray-400 mb-1">
-            <span>LuTech</span>
+            <span>EduTech</span>
             <ChevronRight size={14} className="text-gray-300" />
             <span className="text-primary">{pageTitle}</span>
           </div>

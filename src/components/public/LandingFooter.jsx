@@ -7,7 +7,7 @@ const LandingFooter = () => {
         {/* Cột 1: Thông tin thương hiệu */}
         <div className="space-y-4">
           <div className="text-2xl font-bold text-primary flex items-center gap-2">
-            <GraduationCap /> LuTech
+            <GraduationCap /> EduTech
           </div>
           <p className="text-textLight text-sm">
             Nền tảng quản lý giáo dục toàn diện, tối ưu hóa trải nghiệm học tập và giảng dạy cho trung tâm ngoại ngữ.
@@ -16,7 +16,7 @@ const LandingFooter = () => {
 
         {/* Cột 2: Quick Links */}
         <div>
-          <h4 className="font-bold text-text mb-4">Về LuTech</h4>
+          <h4 className="font-bold text-text mb-4">Về EduTech</h4>
           <ul className="space-y-2 text-textLight text-sm">
             <li><a href="#" className="hover:text-primary">Giới thiệu</a></li>
             <li><a href="#" className="hover:text-primary">Tuyển dụng</a></li>
@@ -39,7 +39,7 @@ const LandingFooter = () => {
         <div className="space-y-4">
           <h4 className="font-bold text-text">Liên hệ</h4>
           <div className="flex items-center gap-2 text-textLight text-sm">
-            <Mail size={16} /> <span>contact@lutech.vn</span>
+            <Mail size={16} /> <span>contact@edutech.vn</span>
           </div>
           <div className="flex items-center gap-2 text-textLight text-sm">
             <Phone size={16} /> <span>0900 123 456</span>
@@ -52,7 +52,7 @@ const LandingFooter = () => {
 
       {/* Bản quyền */}
       <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-border text-center text-textLight text-sm">
-        © 2026 LuTech Educational System. All rights reserved.
+        © 2026 EduTech Educational System. All rights reserved.
       </div>
     </footer>
   );

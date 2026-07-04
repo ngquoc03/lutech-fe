@@ -12,10 +12,10 @@ const LoginPage = () => {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   const ROLES = [
-    { id: 'admin', label: 'Admin', icon: <ShieldAlert size={16}/>, path: '/admin/dashboard', email: 'admin@lutech.edu' },
-    { id: 'teacher', label: 'Giáo viên', icon: <BookOpen size={16}/>, path: '/teacher/dashboard', email: 'teacher@lutech.edu' },
-    { id: 'student', label: 'Học sinh', icon: <GraduationCap size={16}/>, path: '/student/dashboard', email: 'student@lutech.edu' },
-    { id: 'parent', label: 'Phụ huynh', icon: <Users size={16}/>, path: '/parent/dashboard', email: 'parent@lutech.edu' }
+    { id: 'admin', label: 'Admin', icon: <ShieldAlert size={16}/>, path: '/admin/dashboard', email: 'admin@edutech.edu' },
+    { id: 'teacher', label: 'Giáo viên', icon: <BookOpen size={16}/>, path: '/teacher/dashboard', email: 'teacher@edutech.edu' },
+    { id: 'student', label: 'Học sinh', icon: <GraduationCap size={16}/>, path: '/student/dashboard', email: 'student@edutech.edu' },
+    { id: 'parent', label: 'Phụ huynh', icon: <Users size={16}/>, path: '/parent/dashboard', email: 'parent@edutech.edu' }
   ];
 
   const currentRoleInfo = ROLES.find(r => r.id === activeRole);
@@ -26,7 +26,7 @@ const LoginPage = () => {
     
     // Giả lập thời gian load
     setTimeout(() => {
-      localStorage.setItem('lutech_role', activeRole);
+      localStorage.setItem('edutech_role', activeRole);
       navigate(currentRoleInfo.path);
     }, 1200);
   };
@@ -37,7 +37,7 @@ const LoginPage = () => {
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute -top-[40%] -left-[10%] w-[70%] h-[70%] rounded-full bg-blue-900/20 blur-[120px]"></div>
-        <div className="absolute top-[60%] -right-[10%] w-[60%] h-[60%] rounded-full bg-amber-900/20 blur-[120px]"></div>
+        <div className="absolute top-[60%] -right-[10%] w-[60%] h-[60%] rounded-full bg-primaryDark/20 blur-[120px]"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
       </div>
 
@@ -54,15 +54,15 @@ const LoginPage = () => {
           
           <div className="relative z-10">
             <Link to="/" className="flex items-center gap-2 mb-16 hover:opacity-80 transition-opacity w-fit">
-              <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.3)]">
                 <GraduationCap size={24} className="text-white" />
               </div>
-              <span className="text-2xl font-black text-white tracking-tight">LuTech.</span>
+              <span className="text-2xl font-black text-white tracking-tight">EduTech.</span>
             </Link>
 
             <h1 className="text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
               Kiến tạo <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">tương lai</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">tương lai</span> <br />
               giáo dục.
             </h1>
             <p className="text-zinc-400 text-sm font-medium leading-relaxed max-w-[280px]">
@@ -128,13 +128,13 @@ const LoginPage = () => {
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <label className="text-xs font-black text-zinc-400 uppercase tracking-wider block">Mật khẩu</label>
-                  <a href="#" className="text-xs font-bold text-amber-600 hover:text-amber-700">Quên mật khẩu?</a>
+                  <a href="#" className="text-xs font-bold text-primary hover:text-primaryDark">Quên mật khẩu?</a>
                 </div>
                 <div className="relative">
                   <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={20}/>
                   <input 
                     type="password" 
-                    value="lutech-demo-password"
+                    value="edutech-demo-password"
                     readOnly
                     className="w-full pl-12 pr-4 py-3.5 bg-zinc-50 border border-zinc-200 rounded-xl text-sm font-bold text-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-900/5 transition-all tracking-[0.2em]"
                   />
@@ -145,7 +145,7 @@ const LoginPage = () => {
                 <button 
                   type="submit"
                   disabled={isLoggingIn}
-                  className="w-full bg-zinc-900 hover:bg-zinc-800 text-white py-4 rounded-xl font-bold transition-all shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] flex items-center justify-center gap-2 group disabled:opacity-80 disabled:cursor-not-allowed"
+                  className="w-full bg-primary hover:bg-primaryDark text-white py-4 rounded-xl font-bold transition-all shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] flex items-center justify-center gap-2 group disabled:opacity-80 disabled:cursor-not-allowed"
                 >
                   {isLoggingIn ? (
                     <motion.div

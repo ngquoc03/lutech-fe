@@ -33,7 +33,7 @@ const LandingNavbar = () => {
         
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-primary flex items-center gap-2 hover:scale-105 transition-transform">
-          <GraduationCap size={32} /> LuTech
+          <GraduationCap size={32} /> EduTech
         </Link>
 
         {/* Desktop Menu */}

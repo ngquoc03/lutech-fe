@@ -11,7 +11,7 @@ const AdminDashboard = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight">System Status</h1>
-          <p className="text-zinc-500 mt-1 font-medium">Tổng quan số liệu và tình trạng sức khỏe của nền tảng LuTech.</p>
+          <p className="text-zinc-500 mt-1 font-medium">Tổng quan số liệu và tình trạng sức khỏe của nền tảng EduTech.</p>
         </div>
         <div className="bg-white px-6 py-3 rounded-2xl border border-zinc-200 shadow-sm flex items-center gap-3">
           <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>

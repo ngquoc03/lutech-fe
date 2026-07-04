@@ -15,7 +15,7 @@ const CTA = () => {
           Sẵn sàng để bước vào kỷ nguyên học tập mới?
         </h2>
         <p className="text-xl mb-12 opacity-90 leading-relaxed font-medium">
-          Dù bạn muốn tăng Band điểm nhanh chóng hay quản lý lớp học nhàn tênh, LuTech luôn có giải pháp hoàn hảo dành cho bạn.
+          Dù bạn muốn tăng Band điểm nhanh chóng hay quản lý lớp học nhàn tênh, EduTech luôn có giải pháp hoàn hảo dành cho bạn.
         </p>
         <div className="flex flex-col md:flex-row gap-5 justify-center">
           <button className="bg-white text-primary px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 shadow-2xl hover:bg-gray-50 hover:-translate-y-1 transition-all">

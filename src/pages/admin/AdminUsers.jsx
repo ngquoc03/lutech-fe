@@ -9,11 +9,11 @@ const AdminUsers = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   const USERS = [
-    { id: 'GV001', name: 'Hoàng Lê', subject: 'Toán học', email: 'hoangle@lutech.edu', status: 'active', joinDate: '01/05/2026' },
-    { id: 'GV002', name: 'Mai Phương', subject: 'Vật lý', email: 'maiphuong@lutech.edu', status: 'active', joinDate: '10/06/2026' },
-    { id: 'GV003', name: 'David Smith', subject: 'Tiếng Anh', email: 'david@lutech.edu', status: 'active', joinDate: '15/07/2026' },
-    { id: 'GV004', name: 'Nguyễn Văn Tâm', subject: 'Hóa học', email: 'tam.nguyen@lutech.edu', status: 'inactive', joinDate: '20/08/2026' },
-    { id: 'GV005', name: 'Lê Cường', subject: 'Sinh học', email: 'cuongle@lutech.edu', status: 'banned', joinDate: '01/09/2026' },
+    { id: 'GV001', name: 'Hoàng Lê', subject: 'Toán học', email: 'hoangle@edutech.edu', status: 'active', joinDate: '01/05/2026' },
+    { id: 'GV002', name: 'Mai Phương', subject: 'Vật lý', email: 'maiphuong@edutech.edu', status: 'active', joinDate: '10/06/2026' },
+    { id: 'GV003', name: 'David Smith', subject: 'Tiếng Anh', email: 'david@edutech.edu', status: 'active', joinDate: '15/07/2026' },
+    { id: 'GV004', name: 'Nguyễn Văn Tâm', subject: 'Hóa học', email: 'tam.nguyen@edutech.edu', status: 'inactive', joinDate: '20/08/2026' },
+    { id: 'GV005', name: 'Lê Cường', subject: 'Sinh học', email: 'cuongle@edutech.edu', status: 'banned', joinDate: '01/09/2026' },
   ];
 
   const filteredUsers = activeTab === 'all' ? USERS : USERS.filter(u => u.status === activeTab);
@@ -45,11 +45,11 @@ const AdminUsers = () => {
         <div className="p-6 space-y-4">
           <div>
             <label className="text-xs font-black text-zinc-400 uppercase tracking-wider mb-2 block">Họ và tên</label>
-            <input type="text" placeholder="Nhập tên giáo viên..." className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all font-medium text-zinc-900"/>
+            <input type="text" placeholder="Nhập tên giáo viên..." className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium text-zinc-900"/>
           </div>
           <div>
             <label className="text-xs font-black text-zinc-400 uppercase tracking-wider mb-2 block">Bộ môn giảng dạy</label>
-            <select className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all font-medium text-zinc-900">
+            <select className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium text-zinc-900">
               <option>Toán học</option>
               <option>Vật lý</option>
               <option>Hóa học</option>
@@ -58,10 +58,10 @@ const AdminUsers = () => {
           </div>
           <div>
             <label className="text-xs font-black text-zinc-400 uppercase tracking-wider mb-2 block">Email liên hệ</label>
-            <input type="email" placeholder="Ví dụ: teacher@lutech.edu" className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all font-medium text-zinc-900"/>
+            <input type="email" placeholder="Ví dụ: teacher@edutech.edu" className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium text-zinc-900"/>
           </div>
-          <div className="bg-amber-50 p-4 rounded-xl border border-amber-100">
-            <p className="text-xs font-medium text-amber-800">
+          <div className="bg-primary/5 p-4 rounded-xl border border-primary/20">
+            <p className="text-xs font-medium text-primaryDark">
               Mật khẩu mặc định sẽ được gửi qua Email của giáo viên. Họ sẽ được yêu cầu đổi mật khẩu ở lần đăng nhập đầu tiên.
             </p>
           </div>
@@ -117,7 +117,7 @@ const AdminUsers = () => {
               <input 
                 type="text" 
                 placeholder="Tìm kiếm giáo viên..." 
-                className="w-full pl-10 pr-4 py-2 bg-white border border-zinc-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all"
+                className="w-full pl-10 pr-4 py-2 bg-white border border-zinc-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               />
             </div>
           </div>

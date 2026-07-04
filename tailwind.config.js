@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#10B981',
-        primaryDark: '#059669',
-        secondary: '#2563EB',
+        primary: '#2563EB', // blue-600 (tech vibe)
+        primaryDark: '#1D4ED8', // blue-700 (edu vibe)
+        secondary: '#0EA5E9',
         accent: '#F59E0B',
         background: '#F8FAFC',
         card: '#FFFFFF',

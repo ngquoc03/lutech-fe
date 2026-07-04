@@ -16,7 +16,7 @@ const TeacherLessons = () => {
     {
       id: 1,
       title: "Giải tích 12: Ứng dụng đạo hàm",
-      subject: "Toán",
+      subject: "Toán 12A1",
       type: "pdf",
       date: "01/07/2026",
       views: 124,
@@ -27,7 +27,7 @@ const TeacherLessons = () => {
     {
       id: 2,
       title: "Bài giảng Truyện Kiều (Phần 1)",
-      subject: "Văn",
+      subject: "Văn 10C2",
       type: "youtube",
       date: "28/06/2026",
       views: 56,
@@ -38,7 +38,7 @@ const TeacherLessons = () => {
     {
       id: 3,
       title: "Thực hành Khúc xạ ánh sáng",
-      subject: "Lý",
+      subject: "Lý 11B1",
       type: "drive",
       date: "25/06/2026",
       views: 89,
@@ -49,7 +49,7 @@ const TeacherLessons = () => {
     {
       id: 4,
       title: "Slide Ôn tập Hình không gian",
-      subject: "Toán",
+      subject: "Toán 12A1",
       type: "file",
       date: "20/06/2026",
       views: 210,
@@ -90,12 +90,12 @@ const TeacherLessons = () => {
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex gap-2 bg-white p-1.5 rounded-2xl border border-gray-200 w-fit shadow-sm">
-        {['Tất cả', 'Toán', 'Văn', 'Lý'].map(type => (
+      <div className="flex gap-2 bg-white p-1.5 rounded-2xl border border-gray-200 w-fit shadow-sm overflow-x-auto">
+        {['Tất cả', 'Toán 12A1', 'Lý 11B1', 'Văn 10C2'].map(type => (
           <button
             key={type}
             onClick={() => setFilter(type)}
-            className={`px-6 py-2.5 text-sm font-bold rounded-xl transition-all ${filter === type
+            className={`px-6 py-2.5 text-sm font-bold rounded-xl transition-all whitespace-nowrap ${filter === type
                 ? 'bg-primary text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
               }`}
@@ -188,11 +188,11 @@ const TeacherLessons = () => {
                     <input className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" placeholder="VD: Khảo sát hàm số bậc 3" />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Môn học</label>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">Lớp học</label>
                     <select className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium appearance-none">
-                      <option>Toán học</option>
-                      <option>Vật lý</option>
-                      <option>Ngữ văn</option>
+                      <option>Lớp Toán Đại số 12A1</option>
+                      <option>Lớp Vật Lý 11B1</option>
+                      <option>Lớp Ngữ Văn 10C2</option>
                     </select>
                   </div>
                 </div>

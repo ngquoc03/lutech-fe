@@ -8,6 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 const TeacherUsers = () => {
   const [activeTab, setActiveTab] = useState('student');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isNewParent, setIsNewParent] = useState(false);
+  const [parentSearchTerm, setParentSearchTerm] = useState('');
+  const [showParentDropdown, setShowParentDropdown] = useState(false);
+  const [selectedParentId, setSelectedParentId] = useState('');
 
   const STUDENTS = [
     { id: 'HS001', name: 'Nguyễn Văn An', class: '12A1', parentName: 'Nguyễn Tuấn', parentEmail: 'tuan.nguyen@gmail.com', status: 'active' },
@@ -29,49 +33,141 @@ const TeacherUsers = () => {
         className="bg-white rounded-3xl w-full max-w-xl overflow-hidden shadow-2xl"
       >
         <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
-          <h2 className="text-xl font-extrabold text-gray-900">Cấp tài khoản Học viên mới</h2>
+          <h2 className="text-xl font-extrabold text-gray-900">
+            {activeTab === 'student' ? 'Cấp tài khoản Học viên mới' : 'Tạo tài khoản Phụ huynh mới'}
+          </h2>
           <button onClick={() => setIsAddModalOpen(false)} className="text-gray-400 hover:text-gray-600">
             <MoreVertical className="rotate-90" size={24}/>
           </button>
         </div>
         
         <div className="p-6 space-y-6">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Tên Học viên</label>
-              <input type="text" placeholder="Nhập tên..." className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"/>
-            </div>
-            <div>
-              <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Gán vào Lớp</label>
-              <select className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium">
-                <option>Toán Đại số 12A1</option>
-                <option>Tiếng Anh IELTS</option>
-              </select>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-100 pt-4">
-            <div className="flex items-center gap-2 mb-4">
-              <ShieldCheck size={18} className="text-emerald-500"/>
-              <h3 className="font-bold text-gray-900">Tài khoản Phụ huynh đi kèm</h3>
-            </div>
-            <div className="space-y-4">
-              <div>
-                <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Tên Phụ huynh</label>
-                <input type="text" placeholder="Nhập tên phụ huynh..." className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"/>
+          {activeTab === 'student' ? (
+            <>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Tên Học viên</label>
+                  <input type="text" placeholder="Nhập tên học viên..." className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"/>
+                </div>
+                <div>
+                  <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Gán vào Lớp</label>
+                  <select className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium">
+                    <option>Toán Đại số 12A1</option>
+                    <option>Tiếng Anh IELTS</option>
+                  </select>
+                </div>
               </div>
-              <div>
-                <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Email Phụ huynh</label>
-                <input type="email" placeholder="Hệ thống sẽ gửi tài khoản về email này..." className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"/>
-              </div>
-            </div>
-          </div>
+              
+              <div className="border-t border-gray-100 pt-4">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck size={18} className="text-emerald-500"/>
+                    <h3 className="font-bold text-gray-900">Liên kết Phụ huynh</h3>
+                  </div>
+                </div>
 
-          <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-            <p className="text-xs font-medium text-blue-800">
-              Khi tạo thành công, hệ thống sẽ tự động gửi email chứa 2 thông tin đăng nhập (Của Học viên và Phụ huynh) đến địa chỉ email trên.
-            </p>
-          </div>
+                <div className="flex gap-4 mb-4">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input 
+                      type="radio" 
+                      checked={!isNewParent} 
+                      onChange={() => setIsNewParent(false)}
+                      className="w-4 h-4 text-primary focus:ring-primary"
+                    />
+                    <span className="text-sm font-bold text-gray-700">Chọn Phụ huynh đã có</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input 
+                      type="radio" 
+                      checked={isNewParent} 
+                      onChange={() => setIsNewParent(true)}
+                      className="w-4 h-4 text-primary focus:ring-primary"
+                    />
+                    <span className="text-sm font-bold text-gray-700">Tạo Phụ huynh mới</span>
+                  </label>
+                </div>
+
+                {isNewParent ? (
+                  <div className="space-y-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                    <div>
+                      <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Tên Phụ huynh mới</label>
+                      <input type="text" placeholder="Nhập tên phụ huynh..." className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"/>
+                    </div>
+                    <div>
+                      <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Email / SĐT Phụ huynh</label>
+                      <input type="text" placeholder="Để gửi tài khoản..." className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"/>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 relative">
+                    <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Tìm và Chọn Phụ huynh</label>
+                    <div className="relative">
+                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18}/>
+                      <input 
+                        type="text" 
+                        value={parentSearchTerm}
+                        onChange={(e) => {
+                          setParentSearchTerm(e.target.value);
+                          setShowParentDropdown(true);
+                          setSelectedParentId('');
+                        }}
+                        onFocus={() => setShowParentDropdown(true)}
+                        placeholder="Nhập tên hoặc số điện thoại..." 
+                        className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"
+                      />
+                    </div>
+                    
+                    {showParentDropdown && (
+                      <div className="absolute left-4 right-4 mt-2 bg-white border border-gray-100 shadow-xl rounded-xl max-h-48 overflow-y-auto z-10">
+                        {PARENTS.filter(p => p.name.toLowerCase().includes(parentSearchTerm.toLowerCase()) || p.email.includes(parentSearchTerm))
+                          .map(p => (
+                            <div 
+                              key={p.id} 
+                              onClick={() => {
+                                setSelectedParentId(p.id);
+                                setParentSearchTerm(`${p.name} (${p.email})`);
+                                setShowParentDropdown(false);
+                              }}
+                              className="px-4 py-3 border-b border-gray-50 hover:bg-gray-50 cursor-pointer flex items-center gap-3 transition-colors"
+                            >
+                              <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 font-bold flex flex-shrink-0 items-center justify-center text-xs">
+                                {p.name.charAt(0)}
+                              </div>
+                              <div>
+                                <p className="text-sm font-bold text-gray-900">{p.name}</p>
+                                <p className="text-xs font-medium text-gray-500">{p.email}</p>
+                              </div>
+                            </div>
+                        ))}
+                        {PARENTS.filter(p => p.name.toLowerCase().includes(parentSearchTerm.toLowerCase()) || p.email.includes(parentSearchTerm)).length === 0 && (
+                          <div className="p-4 text-center text-sm text-gray-500 font-medium">Không tìm thấy phụ huynh. Vui lòng tạo mới.</div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="space-y-4">
+                <div>
+                  <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Tên Phụ huynh</label>
+                  <input type="text" placeholder="Nhập tên phụ huynh..." className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"/>
+                </div>
+                <div>
+                  <label className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2 block">Email / SĐT Đăng nhập</label>
+                  <input type="text" placeholder="Nhập email hoặc SĐT..." className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium"/>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 mt-6">
+                <p className="text-xs font-medium text-blue-800">
+                  Hệ thống sẽ tự động gửi thông tin tài khoản đến Email/SĐT vừa nhập. Sau khi tạo xong, bạn có thể gán phụ huynh này cho các học viên tương ứng.
+                </p>
+              </div>
+            </>
+          )}
         </div>
 
         <div className="p-6 border-t border-gray-100 bg-gray-50 flex gap-4">
@@ -93,7 +189,7 @@ const TeacherUsers = () => {
           onClick={() => setIsAddModalOpen(true)}
           className="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg transition-colors flex items-center gap-2"
         >
-          <UserPlus size={20}/> Cấp tài khoản mới
+          <UserPlus size={20}/> {activeTab === 'student' ? 'Thêm Học viên mới' : 'Thêm Phụ huynh mới'}
         </button>
       </div>
 

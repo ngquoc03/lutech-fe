@@ -30,9 +30,9 @@ const AdminNavbar = ({ onMenuClick }) => {
         
         <div className="hidden md:flex flex-col justify-center">
           <div className="flex items-center gap-2 text-sm font-bold text-gray-400 mb-1">
-            <span>LuTech</span>
+            <span>EduTech</span>
             <ChevronRight size={14} className="text-gray-300" />
-            <span className="text-amber-500">{pageTitle}</span>
+            <span className="text-primary">{pageTitle}</span>
           </div>
           <h1 className="text-xl font-extrabold text-gray-900 tracking-tight">
             {pageTitle === 'Bảng điều khiển' ? 'Hệ thống ổn định. Chào Admin! ⚡' : pageTitle}
@@ -53,7 +53,7 @@ const AdminNavbar = ({ onMenuClick }) => {
         <div className="relative">
           <button 
             onClick={() => setShowNotifications(!showNotifications)}
-            className="relative p-2.5 text-gray-500 hover:text-amber-500 hover:bg-amber-50 rounded-full transition-all"
+            className="relative p-2.5 text-gray-500 hover:text-primary hover:bg-primary/5 rounded-full transition-all"
           >
             <Bell size={22}/>
             <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-rose-500 rounded-full border-2 border-white animate-pulse"></span>
@@ -69,7 +69,7 @@ const AdminNavbar = ({ onMenuClick }) => {
               >
                 <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
                   <h3 className="font-bold text-gray-900">Thông báo</h3>
-                  <span className="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">2 Mới</span>
+                  <span className="text-xs font-bold text-amber-600 bg-primary/5 px-2 py-1 rounded">2 Mới</span>
                 </div>
                 <div className="max-h-80 overflow-y-auto">
                   <div className="p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors flex gap-3 cursor-pointer">
@@ -107,7 +107,7 @@ const AdminNavbar = ({ onMenuClick }) => {
             <p className="text-xs font-medium text-gray-500">System Manager</p>
           </div>
           <div className="w-12 h-12 rounded-full bg-zinc-900 flex items-center justify-center text-white shadow-md ring-4 ring-gray-100 relative">
-            <ShieldAlert size={20} className="text-amber-500" />
+            <ShieldAlert size={20} className="text-primary" />
             <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full"></div>
           </div>
         </div>

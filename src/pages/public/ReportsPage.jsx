@@ -59,7 +59,7 @@ const ReportsPage = () => {
                   </span>
                 </h1>
                 <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
-                  Tạm biệt những bảng điểm truyền thống nhàm chán. LuTech mang đến hệ thống phân tích học tập 360°, giúp bạn nhìn rõ từng bước tiến bộ của bản thân qua mỗi ngày học.
+                  Tạm biệt những bảng điểm truyền thống nhàm chán. EduTech mang đến hệ thống phân tích học tập 360°, giúp bạn nhìn rõ từng bước tiến bộ của bản thân qua mỗi ngày học.
                 </p>
               </header>
             </ScrollReveal>

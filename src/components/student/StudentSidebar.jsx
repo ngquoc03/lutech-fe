@@ -10,7 +10,7 @@ const StudentSidebar = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('lutech_role');
+    localStorage.removeItem('edutech_role');
     navigate('/login');
   };
 
@@ -46,7 +46,7 @@ const StudentSidebar = ({ isOpen, setIsOpen }) => {
           onClick={() => setIsOpen?.(false)}
           className="text-2xl font-bold text-primary flex items-center gap-2"
         >
-          <GraduationCap size={32} /> LuTech 
+          <GraduationCap size={32} /> EduTech 
           <span className="text-[10px] font-black uppercase tracking-wider bg-emerald-50 text-emerald-600 px-2 py-1 rounded-md ml-1">
             Student
           </span>

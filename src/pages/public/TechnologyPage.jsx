@@ -30,7 +30,7 @@ const TECH_FEATURES = [
 
 const TypewriterTerminal = () => {
   const [text, setText] = useState('');
-  const fullText = `> lutech-ai grade --student=99281 --task=ielts-writing-t2\n[INFO] Loading NLP models... 100%\n[INFO] Analyzing vocabulary diversity...\n[INFO] Checking grammatical range...\n[SUCCESS] Band Score: 7.5\n[REPORT] Generated in 0.42s`;
+  const fullText = `> edutech-ai grade --student=99281 --task=ielts-writing-t2\n[INFO] Loading NLP models... 100%\n[INFO] Analyzing vocabulary diversity...\n[INFO] Checking grammatical range...\n[SUCCESS] Band Score: 7.5\n[REPORT] Generated in 0.42s`;
 
   useEffect(() => {
     let i = 0;
@@ -103,7 +103,7 @@ const TechnologyPage = () => {
               </span>
             </h1>
             <p className="text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-10 font-medium">
-              Không chỉ là một phần mềm. LuTech mang những công nghệ tiên tiến nhất thế giới như Trí tuệ nhân tạo (AI), Cloud Computing và Big Data để kiến tạo môi trường học tập hoàn hảo.
+              Không chỉ là một phần mềm. EduTech mang những công nghệ tiên tiến nhất thế giới như Trí tuệ nhân tạo (AI), Cloud Computing và Big Data để kiến tạo môi trường học tập hoàn hảo.
             </p>
           </ScrollReveal>
         </div>
@@ -149,7 +149,7 @@ const TechnologyPage = () => {
                 </div>
                 <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">Độ trễ gần như <span className="text-blue-400">bằng không</span></h2>
                 <p className="text-xl text-gray-400 mb-12 leading-relaxed font-medium">
-                  Hệ thống được tối ưu hóa ở mức Database và Cache, kết hợp với mạng lưới CDN toàn cầu. LuTech dễ dàng xử lý hàng chục ngàn học sinh cùng thi thử một lúc mà không gặp bất kỳ gián đoạn nào.
+                  Hệ thống được tối ưu hóa ở mức Database và Cache, kết hợp với mạng lưới CDN toàn cầu. EduTech dễ dàng xử lý hàng chục ngàn học sinh cùng thi thử một lúc mà không gặp bất kỳ gián đoạn nào.
                 </p>
                 
                 <div className="space-y-8">

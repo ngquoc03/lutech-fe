@@ -52,7 +52,7 @@ const Hero = () => {
           </span>
         </h1>
         <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-          LuTech mang đến trải nghiệm học tập đột phá với AI tự động chấm điểm và cá nhân hóa lộ trình cho học sinh, đồng thời giảm thiểu 80% khối lượng công việc quản lý cho giáo viên.
+          EduTech mang đến trải nghiệm học tập đột phá với AI tự động chấm điểm và cá nhân hóa lộ trình cho học sinh, đồng thời giảm thiểu 80% khối lượng công việc quản lý cho giáo viên.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-5 justify-center mt-4">

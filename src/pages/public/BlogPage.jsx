@@ -7,10 +7,10 @@ import ScrollReveal from '../../components/public/ScrollReveal';
 
 const FEATURED_POST = {
   title: "Cách AI thay đổi hoàn toàn cách học sinh chinh phục IELTS 8.0",
-  excerpt: "Khám phá câu chuyện của Minh Hằng - từ band 6.0 lên 8.0 chỉ trong 3 tháng nhờ áp dụng mô hình AI chấm điểm và cá nhân hóa lộ trình học tập của LuTech. Bạn cũng có thể làm được nếu biết cách tận dụng sức mạnh của công nghệ.",
+  excerpt: "Khám phá câu chuyện của Minh Hằng - từ band 6.0 lên 8.0 chỉ trong 3 tháng nhờ áp dụng mô hình AI chấm điểm và cá nhân hóa lộ trình học tập của EduTech. Bạn cũng có thể làm được nếu biết cách tận dụng sức mạnh của công nghệ.",
   category: "Góc Học Tập",
   date: "20 Tháng 5, 2026",
-  author: "LuTech Academic",
+  author: "EduTech Academic",
   readTime: "8 phút đọc",
   coverColor: "from-blue-600 to-indigo-800"
 };
@@ -27,7 +27,7 @@ const POSTS = [
   },
   {
     title: "Giáo viên tiếng Anh thời 4.0: Cắt giảm 80% thời gian chấm bài",
-    excerpt: "Công việc chấm hàng tá bài Writing mỗi đêm đã là dĩ vãng. Hãy xem cách các giáo viên LuTech tận dụng hệ thống Auto-grading để tối ưu giáo án.",
+    excerpt: "Công việc chấm hàng tá bài Writing mỗi đêm đã là dĩ vãng. Hãy xem cách các giáo viên EduTech tận dụng hệ thống Auto-grading để tối ưu giáo án.",
     category: "Dành cho Giáo viên",
     date: "05 Tháng 5, 2026",
     author: "Cô Lan Anh",
@@ -36,7 +36,7 @@ const POSTS = [
   },
   {
     title: "Cập nhật tính năng: Ra mắt hệ thống báo cáo Năng lực Cá nhân",
-    excerpt: "LuTech chính thức phát hành bản cập nhật Báo cáo Học thuật, giúp học viên nhìn rõ biểu đồ tiến bộ của từng kỹ năng qua mỗi tuần.",
+    excerpt: "EduTech chính thức phát hành bản cập nhật Báo cáo Học thuật, giúp học viên nhìn rõ biểu đồ tiến bộ của từng kỹ năng qua mỗi tuần.",
     category: "Cập nhật Sản phẩm",
     date: "28 Tháng 4, 2026",
     author: "Product Team",
@@ -82,7 +82,7 @@ const BlogPage = () => {
                 Thư viện <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Kiến thức</span>
               </h1>
               <p className="text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
-                Nơi hội tụ bí kíp luyện thi IELTS đỉnh cao, xu hướng công nghệ giáo dục và những câu chuyện truyền cảm hứng từ cộng đồng LuTech.
+                Nơi hội tụ bí kíp luyện thi IELTS đỉnh cao, xu hướng công nghệ giáo dục và những câu chuyện truyền cảm hứng từ cộng đồng EduTech.
               </p>
               
               <div className="max-w-2xl mx-auto relative group">
@@ -201,7 +201,7 @@ const BlogPage = () => {
                
                <h2 className="text-4xl md:text-5xl font-extrabold mb-6 relative z-10">Đừng bỏ lỡ bí kíp học tập</h2>
                <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto relative z-10 font-medium leading-relaxed">
-                 Tham gia cùng 10,000+ học viên và giáo viên khác. Nhận email định kỳ về các mẹo thi IELTS và tài liệu độc quyền từ LuTech.
+                 Tham gia cùng 10,000+ học viên và giáo viên khác. Nhận email định kỳ về các mẹo thi IELTS và tài liệu độc quyền từ EduTech.
                </p>
                
                <form className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto relative z-10" onSubmit={(e) => e.preventDefault()}>

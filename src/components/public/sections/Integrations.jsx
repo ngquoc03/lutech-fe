@@ -16,7 +16,7 @@ const Integrations = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Môi trường học tập không giới hạn</h2>
           <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-            LuTech kết nối mượt mà với các công cụ học tập và giao tiếp bạn đang sử dụng mỗi ngày. Lớp học trực tuyến, nhắc lịch tự động, và chia sẻ tài liệu chưa bao giờ dễ dàng đến thế.
+            EduTech kết nối mượt mà với các công cụ học tập và giao tiếp bạn đang sử dụng mỗi ngày. Lớp học trực tuyến, nhắc lịch tự động, và chia sẻ tài liệu chưa bao giờ dễ dàng đến thế.
           </p>
           <div className="grid grid-cols-2 gap-4">
             {['Zoom & Google Meet', 'Zalo & Messenger', 'Google Calendar', 'Thanh toán Online'].map(item => (

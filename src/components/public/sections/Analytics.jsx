@@ -4,7 +4,7 @@ import { BarChart2, TrendingUp, Users, Clock } from 'lucide-react';
 const METRICS = [
   { title: "Cải thiện Band điểm", value: "98%", icon: <TrendingUp />, desc: "Học sinh tăng ít nhất 0.5 Band sau 2 tháng" },
   { title: "Truy cập mọi lúc", value: "24/7", icon: <Clock />, desc: "Học tập không giới hạn thời gian" },
-  { title: "Giáo viên tin dùng", value: "500+", icon: <Users />, desc: "Đã sử dụng LuTech để quản lý lớp" },
+  { title: "Giáo viên tin dùng", value: "500+", icon: <Users />, desc: "Đã sử dụng EduTech để quản lý lớp" },
   { title: "Tốc độ chấm bài", value: "0.5s", icon: <BarChart2 />, desc: "AI trả kết quả ngay tức thì" }
 ];
 
